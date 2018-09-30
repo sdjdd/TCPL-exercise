@@ -13,6 +13,10 @@ double pop(void);
 int getch(void);
 void ungetch(int);
 double fmod(double, double);
+void printtop(void);
+double gettop(void);
+void swaptop(void);
+void empty(void);
 
 int sp = 0;
 double val[MAXVAL];
@@ -57,7 +61,7 @@ int main() {
             printf("error: unknown command %s\n", s);
         }
     }
-    printf("%f\n", pop());
+    printtop();
     
     return 0;
 }
@@ -76,6 +80,32 @@ double pop(void) {
         printf("error: stack empty\n");
         return 0.0;
     }
+}
+
+void printtop(void) {
+    printf("%f\n", gettop());
+}
+
+double gettop(void) {
+    if (sp > 0)
+        return val[sp-1];
+    printf("error: stack empty\n");
+    return 0.0;
+}
+
+void swaptop(void) {
+    double t;
+    if (sp > 1) {
+        t = val[sp-1];
+        val[sp-1] = val[sp-2];
+        val[sp-2] = t;
+    } else {
+        printf("error: can't swap stack\n");
+    }
+}
+
+void empty(void) {
+    sp = 0;
 }
 
 int getop(char s[]) {
