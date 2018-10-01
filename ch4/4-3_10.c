@@ -1,6 +1,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 #define BUFSIZE 100
 #define MAXOP 100
@@ -56,6 +57,16 @@ int main() {
         case '%':
             op2 = pop();
             push(fmod(pop(), op2));
+            break;
+        case 's':
+            push(sin(pop()));
+            break;
+        case 'e':
+            push(exp(pop()));
+            break;
+        case 'p':
+            op2 = pop();
+            push(pow(pop(), op2));
             break;
         default:
             printf("error: unknown command %s\n", s);
