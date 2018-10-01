@@ -13,7 +13,6 @@ void push(double);
 double pop(void);
 int getch(void);
 void ungetch(int);
-double fmod(double, double);
 void printtop(void);
 double gettop(void);
 void swaptop(void);
@@ -148,10 +147,4 @@ void ungetch(int c) {
         printf("ungetch: too many characters\n");
     else
         buf[bufp++] = c;
-}
-
-double fmod(double a, double b) {
-    while ((a -= b) >= 0)
-        ;
-    return a + b;
 }
