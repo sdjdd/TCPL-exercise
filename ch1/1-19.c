@@ -5,8 +5,10 @@
 void reverse(char arr[], int len);
 
 int main() {
-    int c, i = 0;
+    int c, i;
     char buf[BUFFERSIZE];
+
+    i = 0;
     while ((c = getchar()) != EOF) {
         if (c == '\n') {
             buf[i] = '\0';
@@ -24,6 +26,7 @@ int main() {
 
 void reverse(char arr[], int len) {
     int t;
+    
     for (int i = 0; i < len / 2; ++i) {
         t = arr[i];
         arr[i] = arr[len - i - 1];

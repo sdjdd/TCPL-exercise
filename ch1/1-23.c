@@ -5,7 +5,9 @@
 #define MULTILINE  2
 
 int main() {
-    int c, last, lastlast, mode, inStr = 0;
+    int c, last, lastlast, mode, inStr;
+    
+    inStr = 0;
     while ((c = getchar()) != EOF) {
         if (c == '"')
             inStr = !inStr;

@@ -2,6 +2,7 @@
 
 int main() {
     int c, last;
+    
     while ((c = getchar()) != EOF) {
         if (c == ' ')
             if (last != ' ')

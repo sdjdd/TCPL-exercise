@@ -5,6 +5,7 @@
 int main() {
     char buf[NEWLINE];
     int c, i, j, p, nl;
+    
     i = 0;
     nl = NEWLINE - 1;
     while ((c = getchar()) != EOF) {

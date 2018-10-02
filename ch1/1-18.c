@@ -5,6 +5,7 @@
 int main() {
     int c, i, haslt;
     char buf[BUFFERSIZE];
+    
     i = haslt = 0;
     while ((c = getchar()) != EOF) {
         if (c == ' ' || c == '\t') {

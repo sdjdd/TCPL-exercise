@@ -5,8 +5,8 @@
 int main() {
     int c, i = 0;
     char buf[MAXLINE + 1];
-    buf[MAXLINE] = '\0';
 
+    buf[MAXLINE] = '\0';
     while ((c = getchar()) != EOF) {
         if (c == '\n') {
             if (i >= MAXLINE)

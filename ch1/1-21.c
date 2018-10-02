@@ -3,8 +3,10 @@
 #define SPACEWIDTH 8
 
 int main() {
-    int c, n = 0;
+    int c, n;
     int ct, cs;
+    
+    n = 0;
     while ((c = getchar()) != EOF) {
         if (c == ' ') {
             ++n;

@@ -2,6 +2,7 @@
 
 int main() {
     int c, i, freq[128];
+    
     for (i = 0; i < 128; ++i)
         freq[i] = 0;
     

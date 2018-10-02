@@ -2,6 +2,7 @@
 
 int main() {
     int c, i, lword[50];
+    
     for (i = 0; i < 50; ++i)
         lword[i] = 0;
     

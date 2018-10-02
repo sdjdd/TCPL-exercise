@@ -4,6 +4,7 @@
 
 int main() {
     int c, i;
+    
     while ((c = getchar()) != EOF) {
         if (c == '\t')
             for (i = SPACEWIDTH; i > 0; --i)

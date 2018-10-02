@@ -8,6 +8,7 @@ void copy(char to[], char from[]);
 int main() {
     int c, i, len, max = 0;
     char line[MAXLINE], longest[MAXLINE], overflow[MAXLINE];
+
     while ((len = _getline(line, MAXLINE)) > 0)
         if (len > max) {
             max = len;
@@ -38,11 +39,13 @@ int main() {
             printf("%s", overflow);
         }
     }
+
     return 0;
 }
 
 int _getline(char line[], int maxline) {
     int c, i;
+
     for (i = 0; i < maxline - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
         line[i] = c;
     if (c == '\n') {
@@ -50,11 +53,13 @@ int _getline(char line[], int maxline) {
         ++i;
     }
     line[i] = '\0';
+
     return i;
 }
 
 void copy(char to[], char from[]) {
     int i = 0;
+    
     while ((to[i] = from[i]) != '\0')
         ++i;
 }
