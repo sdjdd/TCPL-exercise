@@ -22,6 +22,7 @@ int sp = 0;
 double val[MAXVAL];
 char buf[BUFSIZE];
 int bufp = 0;
+double v;
 
 int main() {
     int type;
@@ -51,7 +52,8 @@ int main() {
                 push(pop() / op2);
             break;
         case '\n':
-            printf("\t%.8g\n", pop());
+            v = pop();
+            printf("\t%.8g\n", v);
             break;
         case '%':
             op2 = pop();
@@ -66,6 +68,9 @@ int main() {
         case 'p':
             op2 = pop();
             push(pow(pop(), op2));
+            break;
+        case 'v':
+            push(v);
             break;
         default:
             printf("error: unknown command %s\n", s);
@@ -93,7 +98,8 @@ double pop(void) {
 }
 
 void printtop(void) {
-    printf("%f\n", gettop());
+    v = gettop();
+    printf("%f\n", v);
 }
 
 double gettop(void) {
