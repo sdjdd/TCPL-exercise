@@ -13,6 +13,7 @@ void push(double);
 double pop(void);
 int getch(void);
 void ungetch(int);
+void ungets(char[]);
 void printtop(void);
 double gettop(void);
 void swaptop(void);
@@ -153,4 +154,12 @@ void ungetch(int c) {
         printf("ungetch: too many characters\n");
     else
         buf[bufp++] = c;
+}
+
+void ungets(char s[]) {
+    int i = 0;
+    while (s[i] != '\0')
+        ++i;
+    while (i >= 0)
+        ungetch(s[i--]);
 }
